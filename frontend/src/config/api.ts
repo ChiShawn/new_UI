@@ -1,5 +1,4 @@
 //const API_BASE_URL = 'http://localhost:8000';
-const API_BASE_URL = 'http://10.28.141.12:9988';
 
 export const API_ENDPOINTS = {
   // 認證相關

@@ -1,37 +1,5 @@
 [
   {
-    "username": "admin",
-    "password": "0000",
-    "name": "黃凱堯",
-    "department": "智慧醫療中心",
-    "title": "管理員",
-    "role": "admin",
-    "email": "kyh.l765@mmh.org.tw",
-    "phone": "5522765",
-    "status": "active",
-    "created_at": "2025-06-01 10:00:00",
-    "updated_at": "2025-06-13 00:51:25",
-    "last_login": "2025-06-19 11:33:24",
-    "avatar": "",
-    "note": ""
-  },
-  {
-    "username": "4467",
-    "password": "4467",
-    "name": "翁順隆",
-    "department": "婦產科",
-    "title": "院長/主治醫師",
-    "role": "manager",
-    "email": "4467@mmh.org.tw",
-    "phone": "5504467",
-    "status": "active",
-    "avatar": "",
-    "note": "",
-    "created_at": "2025-06-15 08:48:29",
-    "updated_at": "2025-06-15 08:48:29",
-    "last_login": "2025-06-19 15:31:28"
-  },
-  {
     "username": "1234",
     "password": "4321",
     "name": "王小明",

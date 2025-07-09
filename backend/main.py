@@ -36,7 +36,6 @@ app = FastAPI()
 # 允許您的前端來源
 origins = [
     "http://localhost:3001",
-    "http://10.28.141.12:3001",
 ]
 
 app.add_middleware(

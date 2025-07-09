@@ -10,7 +10,7 @@ export default defineConfig({
     proxy: {
       // 將所有以 '/api' 開頭的請求代理到您的後端伺服器
       '/api': {
-        target: 'http://10.28.141.12:9988', // 替換為您的後端伺服器地址和端口
+        target: 'http://xxx.xxx.xxx.xxx:9988', // 替換為您的後端伺服器地址和端口
         changeOrigin: true, // 更改請求的 Origin 頭部，以便後端正確處理
         secure: false, // 如果後端是 HTTP 而非 HTTPS，設置為 false
         // *** 修正點：移除 rewrite 規則，確保 /api 前綴被保留 ***
@@ -19,7 +19,7 @@ export default defineConfig({
         // rewrite: (path) => path.replace(/^\/api/, ''), // 將此行註釋掉或移除
       },
       '/auth': { // 處理 /auth 開頭的 API 請求
-        target: 'http://10.28.141.12:9988', // 您的後端真實位址
+        target: 'http://xxx.xxx.xxx.xxx:9988', // 您的後端真實位址
         changeOrigin: true, 
         secure: false,
       },
