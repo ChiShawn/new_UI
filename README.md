@@ -35,8 +35,6 @@
 | 地端優先     | 不依賴外部雲端 LLM，如 OpenAI |
 | 離線能力     | Whisper、LLM、搜尋皆可地端運行 |
 | 授權明確     | 使用開源許可（MIT、Apache）之模型 |
-| 計算資源     | Taiwania 杉三號 or 小型 GPU 主機 |
-
 
 ---
 
