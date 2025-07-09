@@ -1,0 +1,116 @@
+/* InfoSection.css - 病患資料區塊 */
+
+.info-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.info-card {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px 20px 20px 20px;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e0e6ef;
+  padding-bottom: 4px;
+  margin-bottom: 18px;
+}
+
+.info-title {
+  color: #0068b7;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.info-section-sub {
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-left: 8px;
+  font-weight: normal;
+}
+
+.info-toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.info-grid {
+  display: grid;
+  /* grid-template-columns: 80px 1.5fr 40px 80px 1.5fr 40px 80px 1.5fr 40px 80px 1.5fr 40px; */
+  grid-template-columns: 7% 13% 4% 7% 13% 6% 7% 13% 4% 7% 13% 4%;
+  row-gap: 12px;
+  column-gap: 4px;
+  margin-left: 8px;
+}
+
+.info-label {
+  color: #0068b7;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.info-readonly-input {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+}
+
+/* 備註及過敏藥物 input 靠左 */
+.info-allergy-input,
+input[style*='span 4'] {
+  text-align: left;
+}
+
+.info-unit {
+  color: #666;
+  font-size: 14px;
+  line-height: 32px;
+  min-width: 32px;
+  text-align: left;
+  margin-left: 12px;
+}
+
+.info-full-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-allergy-row {
+  margin-top: 8px;
+}
+
+.info-allergy-input {
+  width: 100%;
+}
+
+.info-grid-divider {
+  height: 12px;
+  background: none;
+  grid-column: 1 / -1;
+}
+
+.info-allergy-highlight {
+  background: #fff9c4 !important; /* 明顯黃色 */
+  border: 1.5px solid #fbc02d !important;
+  color: #333;
+} 

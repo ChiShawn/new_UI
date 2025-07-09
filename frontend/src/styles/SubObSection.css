@@ -1,0 +1,392 @@
+/* src/styles/SubObSection.css */
+
+/* 現有的整體佈局和卡片樣式 */
+.subob-section {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.subob-card {
+  flex: 1 1 0;
+  min-width: 320px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 12px 20px 20px 20px;
+  border: 1.5px solid #e0e6ef;
+  display: flex;
+  flex-direction: column;
+}
+
+.subob-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e0e6ef;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.subob-title {
+  color: #0068b7;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.subob-section-sub {
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-left: 8px;
+  font-weight: normal;
+}
+
+.subob-toolbar-row, .subob-toolbar-text {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0 0 0;
+}
+
+/* 【修正】: 通用按鈕基礎樣式 - 回歸舊風格 */
+.subob-toolbar-text button { /* 針對 toolbar 內的按鈕 */
+  background: #fff;
+  color: #0068b7;
+  border: 1.5px solid #0068b7;
+  border-radius: 6px;
+  padding: 4px 8px; /* 舊風格的 padding */
+  font-size: 15px; /* 舊風格的字體大小 */
+  font-weight: bold; /* 舊風格的字重 */
+  cursor: pointer;
+  transition: background 0.2s;
+  height: 36px; /* 舊風格的固定高度 */
+  margin-right: 8px; /* 舊風格的右側間距，gap 會覆蓋部分 */
+  display: inline-flex; /* 使用 inline-flex 讓內容和圖標居中對齊 */
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* 圖標和文字間距 */
+}
+
+/* 確保 toolbar right 內最後一個按鈕沒有右邊距 */
+.subob-toolbar-right button:last-child {
+  margin-right: 0;
+}
+
+/* 通用按鈕懸停效果 */
+.subob-toolbar-text button:hover:not(:disabled) {
+  background: #e3f0fc; /* 舊風格的懸停背景色 */
+}
+
+/* 通用按鈕禁用狀態 */
+.subob-toolbar-text button:disabled {
+  background: #f0f0f0; /* 舊風格的禁用背景色 */
+  color: #aaa; /* 舊風格的禁用文字色 */
+  border-color: #ccc; /* 舊風格的禁用邊框色 */
+  cursor: not-allowed;
+  opacity: 1; /* 確保不透明度正常 */
+}
+
+/* 【修正】: 特殊按鈕顏色 - 回歸舊風格 */
+.custom-btn {
+  /* 舊風格沒有特別的 custom-btn 顏色，通常是繼承通用樣式或您有額外定義 */
+  /* 如果您希望它保持藍色，可以保留下面兩行，否則移除以繼承通用樣式 */
+  background: #0068b7 !important; /* 假設您希望自定義按鈕是實心藍色 */
+  color: #fff !important;
+}
+.custom-btn:hover:not(:disabled) {
+  background: #115293 !important; /* 懸停時顏色加深 */
+}
+
+
+/* 文字稿按鈕 - 回歸舊風格 */
+.transcript-btn {
+  background: #0068b7 !important; /* 實心藍色 */
+  color: #fff !important;
+  border: 1.5px solid #0068b7 !important;
+}
+.transcript-btn:hover:not(:disabled) {
+  background: #115293 !important;
+}
+
+/* 上傳按鈕 - 回歸舊風格 (使用藍色，與文字稿按鈕類似) */
+.audio-btn {
+  background: #0068b7 !important; /* 實心藍色 */
+  color: #fff !important;
+  border: 1.5px solid #0068b7 !important;
+}
+.audio-btn:hover:not(:disabled) {
+  background: #115293 !important;
+}
+
+/* 語音按鈕 - 回歸舊風格 */
+.speech-btn {
+  background: #d32f2f !important; /* 實心紅色 */
+  color: #fff !important;
+  border: 1.5px solid #d32f2f !important;
+}
+.speech-btn:hover:not(:disabled) {
+  background: #b71c1c !important; /* 懸停時顏色加深 */
+}
+/* 語音按鈕的錄音脈衝動畫 (保留) */
+.speech-btn.listening {
+  background: #b71c1c; /* 保持錄音時的背景色 */
+  animation: pulse-green 1.5s infinite; /* 綠色脈衝動畫，儘管按鈕是紅色 */
+}
+
+/* 【修正】: 錄音按鈕 - 回歸舊風格 (與語音按鈕相似的實心紅色) */
+.record-btn {
+    background: #d32f2f !important; /* 實心紅色 */
+    color: #fff !important;
+    border: 1.5px solid #d32f2f !important;
+    /* 繼承通用按鈕的 padding, font-size, font-weight, border-radius, height */
+}
+.record-btn:hover:not(:disabled) {
+    background: #b71c1c !important; /* 懸停時顏色加深 */
+}
+/* 錄音按鈕的錄音脈衝動畫 (保留) */
+.record-btn.recording {
+    background: #b71c1c; /* 保持錄音時的背景色 */
+    animation: pulse-red 1.5s infinite; /* 紅色脈衝動畫 */
+}
+/* 確保 disabled 狀態適用 */
+.record-btn:disabled {
+  background: #f0f0f0 !important;
+  color: #aaa !important;
+  border-color: #ccc !important;
+}
+
+
+/* 脈衝動畫 - 紅色 */
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); /* 舊風格紅色 */
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(211, 47, 47, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0);
+    }
+}
+
+/* 脈衝動畫 - 綠色 (為語音按鈕新增) */
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(72, 187, 120, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(72, 187, 120, 0);
+    }
+}
+
+/* textarea 的樣式 */
+.subob-card textarea { /* 從 .subob-textarea 移至此處以符合舊風格 */
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  border-radius: 6px;
+  border: 1.5px solid #d0d7e2;
+  padding: 10px;
+  font-size: 15px;
+  min-height: 240px; /* 舊風格的最小高度 */
+  background: #f8fafd;
+  margin-top: 8px;
+  font-family: inherit;
+}
+/* 為了保持兼容性，也保留 .subob-textarea 的樣式 */
+.subob-textarea {
+  width: 100%;
+  padding: 12px 15px; /* 保持較新的 padding，如果需要完全舊風格可改為 10px */
+  border: 1px solid #cbd5e1; /* 保持較新的邊框，如果需要完全舊風格可改為 1.5px solid #d0d7e2 */
+  border-radius: 8px; /* 保持較新的圓角 */
+  font-size: 1rem; /* 保持較新的字體大小 */
+  color: #334e68;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  min-height: 120px; /* 保持較新的最小高度 */
+}
+
+
+.subob-textarea:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+/* 底部按鈕行 */
+.infer-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px; /* 舊風格的間距 */
+}
+
+/* 清空按鈕 */
+.clear-btn {
+  background: #f5f5f5; /* 舊風格的背景色 */
+  color: #666; /* 舊風格的文字色 */
+  border: 1.5px solid #bbb; /* 舊風格的邊框 */
+  padding: 4px 8px; /* 舊風格的 padding */
+  font-size: 15px; /* 舊風格的字體大小 */
+  font-weight: bold; /* 舊風格的字重 */
+  border-radius: 6px; /* 舊風格的圓角 */
+  cursor: pointer;
+  transition: background 0.2s;
+  height: 36px; /* 舊風格的高度 */
+  margin-right: 8px; /* 舊風格的間距 */
+}
+.clear-btn:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+/* 生成按鈕 (FillTemplate 和 SOAP) - 回歸舊風格 */
+.infer-btn, .infer-btn-s {
+  background: #009688 !important; /* 實心青綠色 */
+  color: #fff !important;
+  border: none !important; /* 無邊框 */
+  padding: 4px 8px !important; /* 舊風格的 padding */
+  font-size: 15px !important; /* 舊風格的字體大小 */
+  font-weight: bold !important; /* 舊風格的字重 */
+  border-radius: 6px !important; /* 舊風格的圓角 */
+  cursor: pointer;
+  height: 36px !important; /* 舊風格的高度 */
+  margin-right: 8px !important; /* 舊風格的間距 */
+  display: inline-flex !important; /* 確保圖標居中 */
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+}
+.infer-btn:hover:not(:disabled), .infer-btn-s:hover:not(:disabled) {
+  background: #00796b !important; /* 懸停時顏色加深 */
+}
+.infer-btn:disabled, .infer-btn-s:disabled {
+  background: #f0f0f0 !important;
+  color: #aaa !important;
+  border-color: #ccc !important;
+  cursor: not-allowed;
+  opacity: 1 !important;
+}
+
+/* 錯誤訊息 (保持不變) */
+.subob-error-message {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* 語音狀態通知 (保持不變) */
+.speech-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4a5568;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 0.9rem;
+    animation: fade-in-out 5s forwards;
+}
+
+@keyframes fade-in-out {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
+
+/* Custom Template Modal 樣式 (保持不變) */
+.custom-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-modal {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 28px 32px 20px 32px;
+  min-width: 340px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0068b7;
+  margin-bottom: 12px;
+}
+.modal-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 250px; /* 從舊風格調整 */
+  border-radius: 6px;
+  border: 1.5px solid #b0b0b0;
+  padding: 8px; /* 從舊風格調整 */
+  font-size: 15px; /* 從舊風格調整 */
+  margin-bottom: 18px;
+  background: #f8fafd;
+  font-family: inherit; /* 確保字體繼承 */
+}
+.modal-textarea:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    align-items: center;
+}
+
+.modal-message {
+    margin-right: auto;
+    color: #38a169;
+    font-weight: 600;
+}
+
+.modal-save, .modal-cancel {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-save {
+    background-color: #4299e1;
+    color: white;
+}
+.modal-save:hover {
+    background-color: #3182ce;
+}
+
+.modal-cancel {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+.modal-cancel:hover {
+    background-color: #cfd8e3;
+}
+

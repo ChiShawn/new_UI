@@ -1,0 +1,216 @@
+.user-mgmt-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0001;
+  padding: 32px 32px 24px 32px;
+}
+
+.user-mgmt-container h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.user-mgmt-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.user-mgmt-form input,
+.user-mgmt-form select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  outline: none;
+}
+
+.user-mgmt-form button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.user-mgmt-form button:hover {
+  background: #444;
+}
+
+.user-mgmt-error {
+  color: #d32f2f;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.user-mgmt-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-mgmt-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.user-mgmt-username {
+  font-size: 1.1rem;
+  font-weight: 500;
+  min-width: 120px;
+}
+
+.user-mgmt-role {
+  color: #888;
+  font-size: 0.95em;
+  margin-left: 4px;
+}
+
+.user-mgmt-status {
+  min-width: 48px;
+  color: #0068b7;
+  font-size: 0.98em;
+}
+
+.user-mgmt-lastlogin {
+  min-width: 160px;
+  color: #888;
+  font-size: 0.95em;
+}
+
+.user-mgmt-edit-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.user-mgmt-edit-fields input,
+.user-mgmt-edit-fields select {
+  padding: 6px 10px;
+  font-size: 15px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  outline: none;
+}
+
+.user-mgmt-edit {
+  background: #0068b7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: background 0.2s;
+}
+
+.user-mgmt-edit:hover {
+  background: #1251a3;
+}
+
+.user-mgmt-delete {
+  color: #fff;
+  background: #d32f2f;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.user-mgmt-delete:hover {
+  background: #b71c1c;
+} 
+
+.user-mgmt-list-item-content {
+  width: 100%;
+}
+
+.user-mgmt-list-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.user-mgmt-list-item-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.user-mgmt-list-item-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.user-mgmt-list-item-actions button {
+  background: #0068b7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-right: 8px;
+}
+.user-mgmt-list-item-actions button:last-child {
+  margin-right: 0;
+}
+.user-mgmt-list-item-actions .user-mgmt-delete-btn {
+  background: #d32f2f;
+  color: #fff;
+}
+.user-mgmt-list-item-actions .user-mgmt-delete-btn:hover {
+  background: #b71c1c;
+}
+.user-mgmt-list-item-actions button:hover:not(.user-mgmt-delete-btn) {
+  background: #1565c0;
+}
+
+.user-mgmt-edit-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.user-mgmt-edit-actions button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.user-mgmt-edit-actions button:first-child {
+  background-color: #0068b7;
+  color: white;
+}
+
+.user-mgmt-edit-actions button:last-child {
+  background-color: #757575;
+  color: white;
+}
+
+.user-mgmt-edit-actions button:hover {
+  opacity: 0.9;
+} 

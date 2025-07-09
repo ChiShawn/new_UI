@@ -1,0 +1,35 @@
+{
+  "CHTNO": "88001555",
+  "NAME": "王小美",
+  "AGE": 32,
+  "GENDER": "女",
+  "HEIGHT": 162,
+  "WEIGHT": 54,
+  "PULSE": 78,
+  "BP": "110/70",
+  "ALLERGY": "Aspirin",
+  "CASENO": 1001,
+  "SCHDATE": "2024/06/15",
+  "IDENTITY": "一般",
+  "NOTE": "IVF-ET病人",
+  "SUBJECTIVE": "prolonged MC period for a long time\nmyoma and adenomyosis were told and sono\nObs/Gyn history\n1.GP1 , sex (+), SD\n2.LMP:5-3\n3.MC: irregular (D/I:)\n   Dysmenorrhea (+); menorrhagia (++)\n4.Pap smear (+)",
+  "OBJECTIVE": "sono: adenomyosis 6.3 cm, 5 myomas about 2.5--1 cm, (SUBMOCOSAL MYOMA 2.5 CM), RT adnexal cyst 2 cm",
+  "ASSESSMENT": [
+    {
+      "code": "D250",
+      "name": ""
+    },
+    {
+      "code": "N920",
+      "name": ""
+    },
+    {
+      "code": "R1030",
+      "name": ""
+    },
+    {
+      "code": "N911",
+      "name": ""
+    }
+  ]
+}

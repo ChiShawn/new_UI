@@ -1,0 +1,216 @@
+/* AstSection.css - Assessment 區塊專用 */
+
+.ast-section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 12px;
+  align-items: stretch;
+}
+
+.ast-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 18px 24px 18px 24px;
+  border: 1.5px solid #e0e6ef;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ast-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e0e6ef;
+  padding-bottom: 4px;
+}
+
+.ast-title {
+  color: #0068b7;
+  font-weight: bold;
+  font-size: 17px;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.ast-btn {
+  background: #e3f0fc;
+  color: #0068b7;
+  border: 1.5px solid #0068b7;
+  border-radius: 6px;
+  padding: 4px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 0;
+}
+.ast-btn:before {
+  content: '';
+}
+.ast-btn.ast-green-btn {
+  background: #009688 !important;
+  color: #fff !important;
+  border: none !important;
+}
+.ast-btn.ast-green-btn:hover {
+  background: #00796b !important;
+}
+.ast-btn.ast-red-btn {
+  background: #d32f2f !important;
+  color: #fff !important;
+  border: 1.5px solid #d32f2f !important;
+}
+.ast-btn.ast-red-btn:hover {
+  background: #b71c1c !important;
+}
+
+.ast-search {
+  width: 100%;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1.5px solid #b0b0b0;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.ast-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 15px;
+}
+.ast-table th, .ast-table td {
+  border: 1.5px solid #e0e0e0;
+  padding: 6px 8px;
+  text-align: center;
+}
+.ast-table th {
+  background: #f5f5f5;
+  font-weight: bold;
+  text-align: center;
+}
+.ast-icd-tag {
+  display: inline-block;
+  padding: 3px 14px;
+  border-radius: 12px;
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+}
+.ast-del {
+  background: #f5f5f5;
+  color: #888;
+  border: 1.5px solid #888;
+  border-radius: 6px;
+  padding: 2px 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.ast-del:hover {
+  background: #e0e0e0;
+}
+
+.green-btn {
+  background: #e8f5e9 !important;
+  color: #388e3c !important;
+  border: 1.5px solid #388e3c !important;
+}
+.green-btn:hover {
+  background: #c8e6c9 !important;
+}
+
+.red-btn {
+  background: #ffebee !important;
+  color: #d32f2f !important;
+  border: 1.5px solid #d32f2f !important;
+}
+.red-btn:hover {
+  background: #ffcdd2 !important;
+}
+
+.ast-btn.green-btn {
+  background: #43a047 !important;
+  color: #fff !important;
+  border: 1.5px solid #388e3c !important;
+}
+.ast-btn.green-btn:hover {
+  background: #2e7031 !important;
+}
+.ast-btn.red-btn {
+  background: #d32f2f !important;
+  color: #fff !important;
+  border: 1.5px solid #d32f2f !important;
+}
+.ast-btn.red-btn:hover {
+  background: #b71c1c !important;
+}
+
+.ast-section-sub {
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.ast-toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  margin-top: 18px;
+}
+
+.ast-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+
+.ast-suggestion-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ast-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.ast-suggestion-item:hover {
+  background: #f5f5f5;
+}
+
+.ast-table th:nth-child(1), .ast-table td:nth-child(1) {
+  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
+}
+.ast-table th:nth-child(2), .ast-table td:nth-child(2) {
+  width: 120px;
+  min-width: 120px;
+  max-width: 140px;
+}
+.ast-table td:nth-child(3),
+.ast-table td:nth-child(4) {
+  text-align: left;
+  padding-left: 12px;
+}
+.ast-table th:nth-child(5), .ast-table td:nth-child(5) {
+  width: 50px;
+  min-width: 50px;
+  padding-left: 0;
+  padding-right: 0;
+} 

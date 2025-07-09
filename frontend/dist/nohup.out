@@ -1,0 +1,28 @@
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET / HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET / HTTP/1.1" 304 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /assets/index-6e2203de.js HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /assets/index-f73857f0.css HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /assets/logo-2b2f5fa4.png HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /favicon.jpg HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /manifest.json HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /logo192.png HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET / HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /assets/index-6e2203de.js HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /assets/index-f73857f0.css HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /assets/logo-2b2f5fa4.png HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /manifest.json HTTP/1.1" 304 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /favicon.jpg HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:29:45] "GET /logo192.png HTTP/1.1" 304 -
+10.28.91.26 - - [08/Jul/2025 08:29:49] code 501, message Unsupported method ('POST')
+10.28.91.26 - - [08/Jul/2025 08:29:49] "POST /auth/login HTTP/1.1" 501 -
+10.28.91.26 - - [08/Jul/2025 08:29:52] code 501, message Unsupported method ('POST')
+10.28.91.26 - - [08/Jul/2025 08:29:52] "POST /auth/login HTTP/1.1" 501 -
+10.28.91.26 - - [08/Jul/2025 08:33:48] "GET / HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:33:48] "GET /assets/index-6e2203de.js HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:33:48] "GET /assets/index-f73857f0.css HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:33:48] "GET /assets/logo-2b2f5fa4.png HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:33:48] "GET /favicon.jpg HTTP/1.1" 200 -
+10.28.91.26 - - [08/Jul/2025 08:33:48] "GET /manifest.json HTTP/1.1" 304 -
+10.28.91.26 - - [08/Jul/2025 08:33:48] "GET /logo192.png HTTP/1.1" 304 -
+10.28.91.26 - - [08/Jul/2025 08:33:52] code 501, message Unsupported method ('POST')
+10.28.91.26 - - [08/Jul/2025 08:33:52] "POST /auth/login HTTP/1.1" 501 -

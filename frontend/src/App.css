@@ -1,0 +1,257 @@
+/* App.css (這個檔案現在包含所有樣式，包括登入頁面) */
+
+/* 基本樣式 */
+body, html, #root {
+  background: #f7f7f7;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif; /* 使用 Inter 字體 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 130px;
+  pointer-events: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0px 0 48px 0;
+  overflow-x: auto;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 20px 32px;
+  gap: 40px;
+}
+
+.patient-info, .exam-data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+}
+
+.exam-data button {
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+/* 登入頁面樣式：主要調整此區塊以符合目標圖片 */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5; /* 輕微的灰色背景 */
+  /* font-family 已經在 body 設置，如果需要特定字體可以在這裡覆蓋 */
+}
+
+.login-card { /* 替換原本的 .login-form */
+  background-color: #ffffff;
+  padding: 2.5rem; /* 40px，讓卡片內容有足夠空間 */
+  border-radius: 1rem; /* 16px，圓角效果 */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* 輕微陰影 */
+  width: 100%;
+  max-width: 28rem; /* 448px，控制卡片的最大寬度 */
+  text-align: center;
+  box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
+  display: flex; /* 使用 flex 佈局來控制內容垂直排列 */
+  flex-direction: column;
+  align-items: center; /* 讓內容水平居中 */
+  gap: 1.5rem; /* 24px，控制卡片內主要元素之間的間距 */
+}
+
+.hospital-logo {
+  max-width: 200px; /* 根據目標圖片調整 Logo 尺寸 */
+  height: auto; /* 保持圖片比例 */
+  margin-bottom: 0.5rem; /* Logo 下方與標題的間距 */
+}
+
+.login-title {
+  font-size: 1.875rem; /* 30px，符合目標圖片的字體大小 */
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem; /* 標題下方與輸入框的間距 */
+}
+
+.input-group {
+  width: 100%; /* 確保輸入組件佔滿卡片寬度 */
+  margin-bottom: 0.75rem; /* 12px，輸入組件之間的間距 */
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem; /* 14px */
+  color: #555;
+  margin-bottom: 0.5rem; /* 8px */
+  font-weight: 500;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.75rem 1rem; /* 12px 16px */
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem; /* 8px */
+  font-size: 1rem; /* 16px */
+  color: #333;
+  box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #3b82f6; /* 藍色邊框 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* 輕微藍色陰影 */
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  background-color: #2563eb; /* 藍色背景 */
+  color: white;
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem; /* 8px */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-top: 1rem; /* 按鈕上方間距 */
+}
+
+.login-button:hover {
+  background-color: #1d4ed8; /* 深一點的藍色 */
+  transform: translateY(-1px); /* 輕微上移效果 */
+}
+
+.login-button:active {
+  background-color: #1e40af; /* 更深藍色 */
+  transform: translateY(0); /* 按下效果 */
+}
+
+.login-error { /* 錯誤訊息樣式 */
+  color: #d32f2f;
+  text-align: center;
+  font-size: 0.875rem; /* 14px */
+  margin-top: -0.5rem; /* 調整為更小的間距 */
+  margin-bottom: 0.5rem;
+}
+
+
+/* Modal 樣式 (保留不變，或根據需要微調) */
+.modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #0002;
+  padding: 32px 32px 24px 32px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+.modal-box input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.modal-box button {
+  padding: 10px;
+  font-size: 16px;
+  background: #0068b7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-box button:hover {
+  background: #1565c0;
+}
+
+.save-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background: #0068b7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-width: 120px;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #1565c0;
+}
+
+.save-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+

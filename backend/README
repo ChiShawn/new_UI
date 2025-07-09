@@ -1,0 +1,158 @@
+# AI 輔助智慧病歷系統 (AI-Assisted Smart Medical Record System)
+
+## 專案簡介
+
+本專案是一個專為醫療專業人員設計的智慧病歷輔助系統。旨在利用大型語言模型 (LLM) 的強大能力，簡化並加速病歷（特別是 SOAP Note）的撰寫流程。系統透過整合語音轉文字、AI 文字生成、以及診斷碼推論等功能，大幅提升病歷紀錄的效率與準確性。
+
+使用者可以透過即時語音辨識、上傳音檔、或手動輸入的方式來記錄病患的主觀敘述 (Subjective) 和客觀檢查 (Objective)，並利用 AI 一鍵生成格式化的病歷內容或完整的 SOAP Note。
+
+---
+
+## 核心功能
+
+* **使用者認證與管理**：透過 JWT (JSON Web Token) 進行安全的登入與 API 驗證。
+* **病患資料管理**：讀取與儲存病患的基本資料與病歷內容。
+* **AI 病歷生成**：
+    * **主訴擴寫 (FillTemplate)**：根據使用者輸入的主訴內容，AI 會自動擴寫成更完整、通順的病歷描述。
+    * **SOAP Note 生成**：根據 S (主訴) 和 O (客觀檢查) 的內容，一鍵生成包含 A (評估) 和 P (計畫) 的完整 SOAP Note。
+* **自定義提示詞 (Prompt)**：使用者可以為「主訴擴寫」和「SOAP Note 生成」設定個人化的提示詞範本，讓 AI 的產出更符合個人習慣與科別需求。
+* **語音轉文字 (STT)**：
+    * **即時辨識**：在 S/O/A 的輸入框中，可直接透過麥克風進行即時語音輸入。
+    * **音檔上傳**：可上傳預錄好的音檔，系統會將其轉換為文字並填入對應的輸入框。
+* **AI 診斷碼推論**：系統能根據主訴內容，自動向 AI 請求，推論出可能的 ICD-10 診斷碼列表作為參考。
+* **ICD-10 本地搜尋**：除了 AI 推論，系統也內建本地的 ICD-10 資料庫，提供即時的關鍵字搜尋與建議功能。
+
+---
+
+## 技術棧 (Technology Stack)
+
+#### 後端 (Backend)
+
+* **框架**: Python 3.11+ 與 [FastAPI](https://fastapi.tiangolo.com/)
+* **伺服器**: [Uvicorn](https://www.uvicorn.org/)
+* **資料驗證**: [Pydantic](https://docs.pydantic.dev/)
+* **HTTP 客戶端**: [httpx](https://www.python-httpx.org/) (用於與外部 LLM API 溝通)
+* **認證**: [python-jose](https://github.com/mpdavis/python-jose) (用於 JWT 的生成與驗證)
+
+#### 前端 (Frontend)
+
+* **框架/函式庫**: [React](https://reactjs.org/) (v18+) 與 [TypeScript](https://www.typescriptlang.org/)
+* **建置工具**: [Vite](https://vitejs.dev/)
+* **HTTP 客戶端**: [Axios](https://axios-http.com/)
+* **CSS/UI**: 純 CSS 與 [Font Awesome](https://fontawesome.com/) (用於圖示)
+* **其他**: [PapaParse](https://www.papaparse.com/) (用於解析本地 CSV 資料)
+
+---
+
+## 專案結構
+```
+phison_doctor/
+├── backend/
+│   ├── main.py                     # FastAPI 主應用程式入口
+│   ├── config.json                 # 全局配置檔案 (LLM URL, Whisper URL, API Keys等)
+│   ├── requirements.txt            # Python 依賴清單
+│   ├── data/                       # 用戶數據和模板的儲存目錄
+│   │   └── {username}/
+│   │       ├── OPD.json
+│   │       ├── subjective_question.txt
+│   │       └── objective_question.txt
+│   └── api/                        # 後端 API 路由模組
+│       ├── __init__.py             # Python 套件初始化檔案
+│       ├── chat.py                 # LLM 生成和舊版語音辨識路由 (已調整)
+│       ├── custom_template.py      # JWT 認證、Token 獲取、load_llm_config
+│       ├── icd.py                  # ICD 相關 API (如果有的話)
+│       ├── login.py                # 登入和 Token 獲取
+│       ├── patient.py              # 病患資料 CRUD
+│       ├── template.py             # 自定義範本的讀取和儲存路由 (新增)
+│       ├── user.py                 # 用戶管理
+│       └── voice_api.py            # 語音轉文字 API (Whisper 整合) (新增)
+├── frontend/
+│   ├── public/                     # 靜態文件，例如 ICDX.csv
+│   │   └── ICDX.csv                # ICD 診斷碼數據
+│   ├── src/
+│   │   ├── App.tsx                 # React 應用程式主組件
+│   │   ├── App.css
+│   │   ├── components/             # React UI 組件
+│   │   │   ├── AstSection.tsx      # 評估診斷區塊
+│   │   │   ├── InfoSection.tsx     # 病患資訊顯示區塊
+│   │   │   ├── PlanSection.tsx     # 治療與處置計畫區塊
+│   │   │   ├── SubObSection.tsx    # 主觀/客觀區塊
+│   │   │   ├── TopBar.tsx          # 頂端導覽列
+│   │   │   └── UserManagement.tsx  # 用戶管理頁面
+│   │   ├── hooks/
+│   │   │   └── useSpeechToText.ts  # Web Speech API 自定義 Hook
+│   │   └── services/               # API 服務層
+│   │       ├── api.ts              # API 基礎設定
+│   │       ├── chatService.ts      # LLM 生成和語音轉文字 API
+│   │       ├── icdService.ts
+│   │       ├── patientService.ts   # 病患資料 API
+│   │       └── templateService.ts  # 自定義範本 API
+│   ├── package.json                # 前端依賴
+│   └── vite.config.ts              # Vite 配置 (例如 API 代理)
+├── .gitignore
+└── README.md                       # 本文件
+```
+## 安裝與執行
+
+### 前置需求
+
+* [Python](https://www.python.org/) 3.11 或更高版本
+* [Node.js](https://nodejs.org/) v18 或更高版本 (包含 npm)
+
+### 後端設定
+
+1.  **進入後端目錄**
+    ```bash
+    cd /home/phison/phison_doctor/new_UI/backend
+    ```
+
+2.  **安裝 Python 依賴套件**
+    (建議先建立一個虛擬環境)
+    ```bash
+    pip install fastapi uvicorn python-multipart python-jose "passlib[bcrypt]" httpx
+    ```
+
+3.  **設定使用者資料庫**
+    * 確認 `backend/db/users.json` 檔案存在且格式正確。
+
+4.  **設定外部服務**
+    * 確認 `backend/config.json` 檔案存在，並填入正確的 LLM API、Whisper API 以及用來取得 token 的帳號密碼與 URL。
+
+5.  **啟動後端伺服器**
+    ```bash
+    uvicorn main:app --host 0.0.0.0 --port 9988 --reload
+    ```
+    伺服器將會運行在 `http://0.0.0.0:9988`。
+
+### 前端設定
+
+1.  **進入前端目錄**
+    (開啟一個新的終端機)
+    ```bash
+    cd /home/phison/phison_doctor/new_UI/frontend 
+    ```
+
+2.  **安裝 Node.js 依賴套件**
+    ```bash
+    npm install
+    ```
+
+3.  **啟動前端開發伺服器**
+    ```bash
+    npm run dev
+    ```
+    系統通常會運行在 `http://localhost:3001` 或一個可用的埠號。請打開瀏覽器並訪問對應的網址。
+
+---
+
+## API 端點說明
+
+所有 API 都由 `main.py` 進行路由分派。
+
+* `POST /auth/login`: 使用者登入，成功後回傳 JWT。
+* `GET /api/patients/{id}`: 根據病歷號 (`CHTNO`) 獲取病患資料。
+* `POST /api/chat/generate`: 核心的 AI 生成功能。根據傳入的 `type` ('FillTemplate' 或 'SOAP') 和 S/O 內容，回傳生成後的文字。
+* `POST /api/voicetotext`: 接收音檔，回傳辨識後的文字。
+* `POST /api/icd/infer`: 根據 S 內容，回傳 AI 推論的 ICD-10 碼列表。
+* `GET /api/user/custom-template`: 獲取目前登入使用者的自定義提示詞。
+* `POST /api/user/custom-template`: 儲存目前登入使用者的自定義提示詞。

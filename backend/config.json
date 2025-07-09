@@ -1,0 +1,14 @@
+{
+    "openai_api_key" : "EMPTY",
+    "openai_api_base": "http://10.28.141.12:8799/vllm/v1/chat/completions",
+    "llm_model": "Qwen2.5-72B-Instruct-AWQ",
+    "whisper_url": "http://10.28.141.12:8799/api/Inference/voicetotext",
+    "token_url": "http://10.28.141.12:8799/api/Account/Login",
+    "token_account": "admin@aidaptiv.com",
+    "token_password": "9fV79i12W",
+    "whisper_file_field": "file", 
+    "whisper_lang_param_key": "language",
+    "whisper_lang_param_value": "zh_TW",
+    "whisper_target_audio_format": "wav"
+}
+

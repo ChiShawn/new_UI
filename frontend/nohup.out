@@ -1,0 +1,12 @@
+
+> clinic-system@0.0.0 dev
+> vite
+
+
+  VITE v4.5.14  ready in 273 ms
+
+  ➜  Local:   http://localhost:3001/
+  ➜  Network: http://10.28.141.12:3001/
+  ➜  Network: http://172.21.0.1:3001/
+  ➜  Network: http://172.22.0.1:3001/
+  ➜  Network: http://172.23.0.1:3001/

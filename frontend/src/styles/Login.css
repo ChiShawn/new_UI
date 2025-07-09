@@ -1,0 +1,113 @@
+/* src/styles/Login.css */
+
+/* 整個登入頁面容器的樣式 */
+.login-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    min-height: 100vh; /* 最小高度為視窗高度 */
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* 柔和的漸變背景 */
+    font-family: 'Inter', sans-serif; /* 使用 Inter 字體 */
+    padding: 20px; /* 內邊距 */
+    box-sizing: border-box; /* 確保 padding 不增加總寬度 */
+}
+
+/* 登入表單的樣式 */
+.login-form {
+    background-color: #ffffff; /* 白色背景 */
+    padding: 40px; /* 內邊距 */
+    border-radius: 16px; /* 圓角 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 柔和的陰影 */
+    width: 100%; /* 預設寬度 */
+    max-width: 400px; /* 最大寬度 */
+    text-align: center; /* 文字居中 */
+}
+
+/* 標題樣式 */
+.login-title {
+    font-size: 2.25rem; /* 較大的字體 */
+    color: #334e68; /* 深藍灰色 */
+    margin-bottom: 30px; /* 底部間距 */
+    font-weight: 700; /* 加粗 */
+}
+
+/* 表單群組 (label + input) 樣式 */
+.form-group {
+    margin-bottom: 20px; /* 底部間距 */
+    text-align: left; /* 內容左對齊 */
+}
+
+/* 標籤樣式 */
+.form-label {
+    display: block; /* 讓標籤獨佔一行 */
+    font-size: 1rem; /* 字體大小 */
+    color: #526c80; /* 中等藍灰色 */
+    margin-bottom: 8px; /* 底部間距 */
+    font-weight: 600; /* 半粗體 */
+}
+
+/* 輸入框樣式 */
+.form-input {
+    width: 100%; /* 寬度佔滿父容器 */
+    padding: 12px 15px; /* 內邊距 */
+    border: 1px solid #cbd5e1; /* 淺灰色邊框 */
+    border-radius: 8px; /* 圓角 */
+    font-size: 1rem; /* 字體大小 */
+    color: #334e68; /* 文字顏色 */
+    outline: none; /* 移除點擊時的藍色邊框 */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* 平滑過渡效果 */
+    box-sizing: border-box; /* 確保 padding 不增加總寬度 */
+}
+
+.form-input:focus {
+    border-color: #4299e1; /* 點擊時邊框變藍色 */
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2); /* 點擊時柔和陰影 */
+}
+
+/* 錯誤訊息樣式 */
+.error-message {
+    color: #ef4444; /* 紅色 */
+    font-size: 0.9rem; /* 字體大小 */
+    margin-bottom: 15px; /* 底部間距 */
+    text-align: center; /* 居中顯示 */
+}
+
+/* 登入按鈕樣式 */
+.login-button {
+    background-color: #4299e1; /* 藍色背景 */
+    color: white; /* 白色文字 */
+    padding: 12px 25px; /* 內邊距 */
+    border: none; /* 無邊框 */
+    border-radius: 8px; /* 圓角 */
+    font-size: 1.1rem; /* 較大字體 */
+    font-weight: 700; /* 加粗 */
+    cursor: pointer; /* 滑鼠指針 */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 平滑過渡效果 */
+    width: 100%; /* 寬度佔滿 */
+    margin-top: 20px; /* 頂部間距 */
+}
+
+.login-button:hover {
+    background-color: #3182ce; /* 懸停時顏色變深 */
+    transform: translateY(-2px); /* 輕微上移效果 */
+}
+
+.login-button:disabled {
+    background-color: #a0aec0; /* 禁用時變灰 */
+    cursor: not-allowed; /* 禁用時滑鼠指針 */
+    transform: translateY(0); /* 禁用時無上移效果 */
+}
+
+/* 響應式設計：小螢幕調整 */
+@media (max-width: 600px) {
+    .login-form {
+        padding: 30px 20px; /* 縮小內邊距 */
+    }
+    .login-title {
+        font-size: 2rem; /* 標題字體縮小 */
+    }
+    .form-label, .form-input, .login-button {
+        font-size: 0.95rem; /* 調整字體大小 */
+    }
+}
+
